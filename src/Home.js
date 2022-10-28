@@ -60,7 +60,7 @@ function Home() {
                     class="max-w-2xl mx-auto"
                     onClick={() => navigate(`/repo/${profile?.login}`)}
                   >
-                    <div class="flex flex-wrap -mx-4 mb-20">
+                    <div class="flex flex-wrap -mx-4 pb-20">
                       <div class="w-full lg:w-1/2 px-4 mb-4 lg:mb-0 cursor-pointer">
                         <div class="bg-gray-400 rounded-lg ">
                           <div class="flex justify-center">
@@ -89,13 +89,14 @@ function Home() {
 
                             <div class="mb-6 py-px bg-gray-500"></div>
                             <div class="md:text-right">
-                              <a
-                                href={profile?.html_url}
-                                target="_blank"
+                              <span
+                                onClick={() =>
+                                  navigate(`/repo/${profile?.login}`)
+                                }
                                 class="inline-block px-12 py-4 border border-gray-600 hover:border-gray-200 hover:text-color-white rounded-full text-gray"
                               >
-                                View Profile
-                              </a>
+                                View repos
+                              </span>
                             </div>
                           </div>
                         </div>

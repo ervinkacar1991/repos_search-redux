@@ -14,7 +14,10 @@ const Repo = () => {
 
   useEffect(() => {
     dispatch(fetchReposAction(user));
-  }, []);
+    console.log("first");
+  }, [dispatch, user]);
+
+  console.log(reposList);
   return (
     <div class="flex justify-center items-center mt-10 scroll-pl-6 snap-y">
       <div class="w-1/3 flex flex-col justify-center pb-4 ">
@@ -32,10 +35,23 @@ const Repo = () => {
                   <a
                     href={repo?.html_url}
                     target="_blank"
+                    rel="noreferrer"
                     class="text-lg  text-gray-700 hover:text-gray-200"
                   >
                     {repo?.name}
                   </a>
+                </div>
+                <div>
+                  <span>Stars: </span>
+                  {repo.stargazers_count}
+                </div>
+                <div>
+                  <span>Forks: </span>
+                  {repo.forks}
+                </div>
+                <div>
+                  <span>Watchers: </span>
+                  {repo.watchers_count}
                 </div>
               </div>
             </>
